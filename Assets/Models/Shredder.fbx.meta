@@ -3,7 +3,17 @@ guid: 5b560b9224fcb7845835f6fee2799ce6
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shredder_corpus
+    second: {fileID: 2100000, guid: f6f11cf0ddb314a46aad5f431980f29d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u0421onveyor_side"
+    second: {fileID: 2100000, guid: 235aa9dec17060a4cbfcbdcfbc4bbdc1, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

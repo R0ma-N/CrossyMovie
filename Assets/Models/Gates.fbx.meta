@@ -72,7 +72,27 @@ ModelImporter:
   - first:
       74: -7233086158242752913
     second: Cube.014|ShredderAction
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blue
+    second: {fileID: 2100000, guid: d4639af53ed542a4984fab74ac0f50ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey
+    second: {fileID: 2100000, guid: d429ca93c9d43c84a93c1f1a8b30f6fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red
+    second: {fileID: 2100000, guid: b28c1ded8c3d129448f5db56d1549abb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u0421onveyor_lenta_side"
+    second: {fileID: 2100000, guid: 69d99975d87488b4fbcd3401600f5ae0, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

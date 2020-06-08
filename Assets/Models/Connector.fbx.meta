@@ -42,7 +42,22 @@ ModelImporter:
   - first:
       74: 5867467924475459969
     second: Saw.006|Saw.006Action.001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Beton
+    second: {fileID: 2100000, guid: 84bc766f2192437408284461f8feb26b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shredder_corpus
+    second: {fileID: 2100000, guid: f6f11cf0ddb314a46aad5f431980f29d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u0421onveyor_side"
+    second: {fileID: 2100000, guid: 235aa9dec17060a4cbfcbdcfbc4bbdc1, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
