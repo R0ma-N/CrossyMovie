@@ -7,6 +7,6 @@ public class SawRotation : MonoBehaviour
     public float speedRotation = 10;
     void Update()
     {
-        transform.Rotate(Vector3.up * speedRotation * Time.deltaTime);
+        transform.Rotate(Vector3.forward * speedRotation * Time.deltaTime);
     }
 }
