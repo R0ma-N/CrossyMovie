@@ -5,18 +5,17 @@ using UnityEngine;
 public class Box : MonoBehaviour
 {
     Animator Animator;
-    //Rigidbody rigidbody;
     Collider Collider;
 
+    public bool go;
     public float speed;
-    public bool InJumpSetor;
-    public bool escapeDeath = false;
+
     
     void Start()
     {
         Animator = GetComponent<Animator>();
-        ///rigidbody = GetComponent<Rigidbody>();
         Collider = GetComponentInChildren<Collider>();
+        go = false;
     }
 
     // Update is called once per frame
@@ -34,13 +33,23 @@ public class Box : MonoBehaviour
         //        escapeDeath = true;
         //    }
         //}
+        if (go)
+        {
+            //transform.position += Vector3.right * Time.deltaTime * speed;
+            transform.Translate(Vector3.left * Time.deltaTime * speed);
+        }
     }
 
-    public void fall()
+    public void OnConveyor()
     {
-        Animator.enabled = true;
-        Animator.SetTrigger("Fall");
-        GetComponent<Rigidbody>().isKinematic = true;
+        print(666666);
+        go = true;
+    }
+
+    public void OutConveyor()
+    {
+        print(999999);
+        go = false;
     }
 
     public void GoConveyor()
@@ -50,29 +59,25 @@ public class Box : MonoBehaviour
 
     public void Saw()
     {
-
-            Animator.SetTrigger("Saw");
-
+        Animator.SetTrigger("Saw");
+        go = false;
     }
 
     public void JumpSaw()
     {
         Animator.SetTrigger("JumpSaw");
-        Animator.SetBool("CanGo", true);
     }
 
-    public void SideJump()
+    public void LeftJump()
     {
-        Animator.SetTrigger("SideJump");
-    }
-    public void RigedBodySwitcher()
-    {
-
+        Animator.SetTrigger("JumpToLeft");
+        go = false;
     }
 
     public void Shredder()
     {
         Animator.SetTrigger("Shredder");
+        go = false;
     }
 
 }

@@ -15,7 +15,7 @@ public class TriggerSideJump : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         print(777);
-        other.GetComponent<Box>().SideJump();
+        other.GetComponent<Box>().LeftJump();
     }
 
     private void Update()
