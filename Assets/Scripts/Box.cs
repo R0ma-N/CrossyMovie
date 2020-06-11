@@ -5,50 +5,54 @@ using UnityEngine;
 public class Box : MonoBehaviour
 {
     Animator Animator;
-    Collider Collider;
+    AnimatorClipInfo[] m_CurrentClipInfo; 
+
+    ParticleSystem boom;
 
     public bool go;
     public float speed;
 
-    
     void Start()
     {
         Animator = GetComponent<Animator>();
-        Collider = GetComponentInChildren<Collider>();
+        m_CurrentClipInfo = Animator.GetCurrentAnimatorClipInfo(0);
+
+
+        
+        boom = GetComponentInChildren<ParticleSystem>();
+        boom.Stop();
         go = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    if (!InJumpSetor)
-        //    {
-        //        Animator.SetTrigger("Jump");
-        //    }
-        //    else
-        //    {
-        //        Animator.SetTrigger("BigJump");
-        //        escapeDeath = true;
-        //    }
-        //}
         if (go)
         {
-            //transform.position += Vector3.right * Time.deltaTime * speed;
             transform.Translate(Vector3.left * Time.deltaTime * speed);
         }
     }
 
+    public void Boom()
+    {
+        print("BOOM");
+        boom.Play();
+    }
+
     public void OnConveyor()
     {
-        print(666666);
         go = true;
+
+        //for (int i = 0; i < m_CurrentClipInfo.Length; i++)
+        //{
+        //    if (m_CurrentClipInfo[i].clip.name == "Box_Armature.006|Salto")
+        //    {
+        //        Boom();
+        //    }
+        //}
     }
 
     public void OutConveyor()
     {
-        print(999999);
         go = false;
     }
 
