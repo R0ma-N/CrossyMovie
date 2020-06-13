@@ -502,7 +502,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deda4c233c823547b3f6ba6d9b44bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -0.25
 --- !u!4 &191349293 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8f4d569887481f84eb57da94d9f9c207,
@@ -636,7 +635,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deda4c233c823547b3f6ba6d9b44bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -0.25
 --- !u!1001 &261222138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -854,7 +852,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deda4c233c823547b3f6ba6d9b44bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -0.25
 --- !u!1001 &288808494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1333,7 +1330,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deda4c233c823547b3f6ba6d9b44bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -0.25
 --- !u!1 &411840412
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,7 +1466,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deda4c233c823547b3f6ba6d9b44bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -0.25
 --- !u!1 &506666859 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 894d33b0213bb0d46be6ef0052f9c66e,
@@ -1495,7 +1490,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deda4c233c823547b3f6ba6d9b44bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -0.25
 --- !u!1001 &506696904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1738,7 +1732,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deda4c233c823547b3f6ba6d9b44bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -0.25
 --- !u!4 &683036307 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8f4d569887481f84eb57da94d9f9c207,
@@ -2395,7 +2388,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deda4c233c823547b3f6ba6d9b44bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -0.25
 --- !u!1 &922142232 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1379660009244869462, guid: 5b560b9224fcb7845835f6fee2799ce6,
@@ -2935,7 +2927,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deda4c233c823547b3f6ba6d9b44bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -0.25
 --- !u!4 &1055912247 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: fe3344be290c93941bc86ba52e1c8205,
@@ -2966,7 +2957,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deda4c233c823547b3f6ba6d9b44bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -0.25
 --- !u!1 &1095129053 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4744825197462075351, guid: 63b3ce0604cfac14fb5b0325ece0c297,
@@ -5054,7 +5044,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deda4c233c823547b3f6ba6d9b44bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -0.25
 --- !u!1001 &1669643472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5142,7 +5131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deda4c233c823547b3f6ba6d9b44bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -0.25
 --- !u!1001 &1676565599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5431,7 +5419,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deda4c233c823547b3f6ba6d9b44bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -0.25
 --- !u!1001 &1798890305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5639,7 +5626,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deda4c233c823547b3f6ba6d9b44bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -0.25
 --- !u!1001 &1828460230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5883,7 +5869,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deda4c233c823547b3f6ba6d9b44bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -0.25
 --- !u!4 &1928353142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 86977308397501865, guid: e11371ae488fe1b44931e5db2d71f89e,
@@ -6677,6 +6662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c908ba9c88f01804db813cf460355dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Coeff: 2
   go: 0
   speed: 3
 --- !u!65 &2116462909

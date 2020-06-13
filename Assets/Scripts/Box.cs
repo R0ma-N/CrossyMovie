@@ -9,6 +9,7 @@ public class Box : MonoBehaviour
 
     ParticleSystem boom;
 
+    public float Coeff = 1;
     public bool go;
     public float speed;
 
@@ -16,9 +17,6 @@ public class Box : MonoBehaviour
     {
         Animator = GetComponent<Animator>();
         m_CurrentClipInfo = Animator.GetCurrentAnimatorClipInfo(0);
-
-
-        
         boom = GetComponentInChildren<ParticleSystem>();
         boom.Stop();
         go = false;
@@ -28,7 +26,7 @@ public class Box : MonoBehaviour
     {
         if (go)
         {
-            transform.Translate(Vector3.left * Time.deltaTime * speed);
+            transform.Translate(Vector3.left * Time.deltaTime * speed * Coeff);
         }
     }
 
