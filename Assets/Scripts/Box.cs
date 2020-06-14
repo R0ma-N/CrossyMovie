@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,9 +9,9 @@ public class Box : MonoBehaviour
     AudioSource sound;
     [SerializeField] AudioClip[] audioClips;
 
-    public ParticleSystem boom;
+    ParticleSystem boom;
 
-    public float CoeffOfMovingSpeed = 1;
+    public float CoeffOfMovingSpeed;
     private bool go;
     private float speed;
 
@@ -59,7 +60,6 @@ public class Box : MonoBehaviour
 
     public void OutConveyor()
     {
-        
         go = false;
     }
 
@@ -88,7 +88,14 @@ public class Box : MonoBehaviour
         Animator.SetTrigger("JumpToLeft");
         sound.clip = audioClips[4];
         sound.PlayDelayed(0.1f);
-        go = false;
+        //go = false;
+    }
+    internal void RightJump()
+    {
+        Animator.SetTrigger("JumpToRight");
+        sound.clip = audioClips[4];
+        sound.PlayDelayed(0.1f);
+        //go = false;
     }
 
     public void Shredder()
@@ -97,12 +104,6 @@ public class Box : MonoBehaviour
         sound.clip = audioClips[6];
         sound.Play();
         go = false;
-    }
-
-    public void Coin()
-    {
-        sound.clip = audioClips[5];
-        sound.Play();
     }
 
 }

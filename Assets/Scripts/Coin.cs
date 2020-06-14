@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    private Box player;
     private UI UI;
+    AudioSource sound;
+    MeshRenderer meshRenderer;
 
     private void Awake()
     {
         UI = GameObject.FindObjectOfType<UI>();
-        player = GameObject.FindObjectOfType<Box>();
+        sound = GetComponent<AudioSource>();
+        meshRenderer = GetComponent<MeshRenderer>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        player.Coin();
         UI.Shake();
-        Destroy(gameObject);
+        meshRenderer.enabled = false;
+        sound.Play();
+        Destroy(gameObject,1f);
     }
 }

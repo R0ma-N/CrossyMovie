@@ -7,20 +7,20 @@ public class UI : MonoBehaviour
 {
     Animator Count;
     float coinsCount;
-    Text[] texts;
+    Text text;
     
     void Start()
     {
         Count = GetComponent<Animator>();
-        texts = GetComponentsInChildren<Text>();
+        text = GetComponent<Text>();
         coinsCount = 0;
-        texts[0].text = texts[1].text = "x " + 0;
+        text.text = "x " + 0;
     }
 
     public void Shake()
     {
         Count.SetTrigger("GotCoin");
         coinsCount++;
-        texts[0].text = texts[1].text = "x " + coinsCount;
+        text.text = text.text = "x " + coinsCount;
     }
 }
