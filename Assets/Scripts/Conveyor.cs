@@ -5,13 +5,15 @@ using UnityEngine;
 public class Conveyor : MonoBehaviour
 {
     MeshRenderer MeshRenderer;
-    private float scrollSpeed = - 0.25f;
+    private float scrollSpeed;
     private float coeff;
 
     void Start()
     {
         MeshRenderer = GetComponent<MeshRenderer>();
-        coeff = GameObject.FindObjectOfType<Box>().Coeff;
+        coeff = GameObject.FindObjectOfType<Box>().CoeffOfMovingSpeed;
+        scrollSpeed = -0.17f;
+        //coeff = 1;
     }
 
     // Update is called once per frame

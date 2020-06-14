@@ -147,8 +147,16 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.2479765
-        functionName: Boom
+      - time: 0.17469044
+        functionName: Starting
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c908ba9c88f01804db813cf460355dd8,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.2590909
+        functionName: NoSoundBoom
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c908ba9c88f01804db813cf460355dd8,
           type: 3}
@@ -184,6 +192,14 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.6458546
+        functionName: Boom
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c908ba9c88f01804db813cf460355dd8,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.65874445
         functionName: OnConveyor
         data: 

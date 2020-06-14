@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class StartTrigger : MonoBehaviour
 {
-    GameObject player;
+    Box player;
     
     private void Start()
     {
-        player = GameObject.FindObjectOfType<Box>().gameObject;
+        player = GameObject.FindObjectOfType<Box>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //Camera.main.transform.SetParent(player.transform);
+
+        player.Boom();
     }
 }

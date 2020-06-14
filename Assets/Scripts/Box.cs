@@ -5,20 +5,23 @@ using UnityEngine;
 public class Box : MonoBehaviour
 {
     Animator Animator;
-    AnimatorClipInfo[] m_CurrentClipInfo; 
+    AudioSource sound;
+    [SerializeField] AudioClip[] audioClips;
 
-    ParticleSystem boom;
+    public ParticleSystem boom;
 
-    public float Coeff = 1;
-    public bool go;
-    public float speed;
+    public float CoeffOfMovingSpeed = 1;
+    private bool go;
+    private float speed;
 
     void Start()
     {
         Animator = GetComponent<Animator>();
-        m_CurrentClipInfo = Animator.GetCurrentAnimatorClipInfo(0);
+        sound = GetComponent<AudioSource>();
         boom = GetComponentInChildren<ParticleSystem>();
         boom.Stop();
+        //CoeffOfMovingSpeed = 1;
+        speed = 2;
         go = false;
     }
 
@@ -26,31 +29,37 @@ public class Box : MonoBehaviour
     {
         if (go)
         {
-            transform.Translate(Vector3.left * Time.deltaTime * speed * Coeff);
+            transform.Translate(Vector3.left * Time.deltaTime * speed * CoeffOfMovingSpeed);
         }
     }
 
     public void Boom()
     {
         print("BOOM");
+        sound.clip = audioClips[0];
+        sound.Play();
         boom.Play();
+    }
+
+    public void NoSoundBoom()
+    {
+        boom.Play();
+    }
+
+    public void Starting()
+    {
+        sound.clip = audioClips[1];
+        sound.Play();
     }
 
     public void OnConveyor()
     {
         go = true;
-
-        //for (int i = 0; i < m_CurrentClipInfo.Length; i++)
-        //{
-        //    if (m_CurrentClipInfo[i].clip.name == "Box_Armature.006|Salto")
-        //    {
-        //        Boom();
-        //    }
-        //}
     }
 
     public void OutConveyor()
     {
+        
         go = false;
     }
 
@@ -62,24 +71,38 @@ public class Box : MonoBehaviour
     public void Saw()
     {
         Animator.SetTrigger("Saw");
+        sound.clip = audioClips[3];
+        sound.Play();
         go = false;
     }
 
     public void JumpSaw()
     {
         Animator.SetTrigger("JumpSaw");
+        sound.clip = audioClips[2];
+        sound.PlayDelayed(0.1f);
     }
 
     public void LeftJump()
     {
         Animator.SetTrigger("JumpToLeft");
+        sound.clip = audioClips[4];
+        sound.PlayDelayed(0.1f);
         go = false;
     }
 
     public void Shredder()
     {
         Animator.SetTrigger("Shredder");
+        sound.clip = audioClips[6];
+        sound.Play();
         go = false;
+    }
+
+    public void Coin()
+    {
+        sound.clip = audioClips[5];
+        sound.Play();
     }
 
 }
