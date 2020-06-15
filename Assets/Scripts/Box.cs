@@ -41,16 +41,18 @@ public class Box : MonoBehaviour
         go = false;
     }
 
+    public void ShortJump()
+    {
+        Animator.SetTrigger("Short Jump");
+        sound.clip = audioClips[4];
+        sound.PlayDelayed(0.1f);
+    }
+
     public void Boom()
     {
         print("BOOM");
         sound.clip = audioClips[0];
         sound.Play();
-        boom.Play();
-    }
-
-    public void NoSoundBoom()
-    {
         boom.Play();
     }
 
