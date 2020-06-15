@@ -33,6 +33,11 @@ public class Box : MonoBehaviour
         {
             transform.Translate(Vector3.left * Time.deltaTime * speed * CoeffOfMovingSpeed);
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ShortJump();
+        }
     }
 
     internal void Falling()

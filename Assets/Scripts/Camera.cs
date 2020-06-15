@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
     public float offsetX = 7;
     public float offsetY = 7;
+
+    private void Awake()
+    {
+        player = GameObject.FindObjectOfType<Box>().transform;
+    }
 
     private void Update()
     {

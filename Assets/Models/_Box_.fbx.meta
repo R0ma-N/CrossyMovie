@@ -105,7 +105,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 1
@@ -155,7 +155,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.2912798
+      - time: 0.27342266
         functionName: Starting
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c908ba9c88f01804db813cf460355dd8,
@@ -200,6 +200,14 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.2169014
+        functionName: OutConveyor
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c908ba9c88f01804db813cf460355dd8,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.6458546
         functionName: Boom
         data: 
@@ -209,7 +217,7 @@ ModelImporter:
         intParameter: 0
         messageOptions: 0
       - time: 0.65874445
-        functionName: OnConveyor
+        functionName: OutConveyor
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c908ba9c88f01804db813cf460355dd8,
           type: 3}
