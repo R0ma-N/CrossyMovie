@@ -7,12 +7,13 @@ public class Box : MonoBehaviour
 {
     Animator Animator;
     AudioSource sound;
+    [SerializeField] bool go;
     [SerializeField] AudioClip[] audioClips;
 
     ParticleSystem boom;
 
+
     public float CoeffOfMovingSpeed;
-    private bool go;
     private float speed;
 
     void Start()
@@ -23,7 +24,7 @@ public class Box : MonoBehaviour
         boom.Stop();
         //CoeffOfMovingSpeed = 1;
         speed = 2;
-        go = false;
+        //go = false;
     }
 
     void Update()
@@ -32,6 +33,12 @@ public class Box : MonoBehaviour
         {
             transform.Translate(Vector3.left * Time.deltaTime * speed * CoeffOfMovingSpeed);
         }
+    }
+
+    internal void Falling()
+    {
+        Animator.SetTrigger("JumpOfFaith");
+        go = false;
     }
 
     public void Boom()
@@ -88,14 +95,12 @@ public class Box : MonoBehaviour
         Animator.SetTrigger("JumpToLeft");
         sound.clip = audioClips[4];
         sound.PlayDelayed(0.1f);
-        //go = false;
     }
     internal void RightJump()
     {
         Animator.SetTrigger("JumpToRight");
         sound.clip = audioClips[4];
         sound.PlayDelayed(0.1f);
-        //go = false;
     }
 
     public void Shredder()
