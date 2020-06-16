@@ -36,7 +36,7 @@ public class Box : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            ShortJump();
+            JumpSaw();
         }
     }
 
@@ -115,6 +115,11 @@ public class Box : MonoBehaviour
         Animator.SetTrigger("Shredder");
         sound.clip = audioClips[6];
         sound.Play();
+        go = false;
+    }
+
+    public void Stop()
+    {
         go = false;
     }
 
