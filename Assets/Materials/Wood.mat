@@ -109,7 +109,7 @@ Material:
     - _Color: {r: 1, g: 0.78037584, b: 0.19215685, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HColor: {r: 0.6, g: 0.6, b: 0.6, a: 1}
-    - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _HighlightColor: {r: 1, g: 0.83488685, b: 0.4481132, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _SColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
