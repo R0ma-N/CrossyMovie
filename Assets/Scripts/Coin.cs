@@ -17,9 +17,12 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        UI.Shake();
-        meshRenderer.enabled = false;
-        sound.Play();
-        Destroy(gameObject,1f);
+        if (other.TryGetComponent<Box>(out Box box))
+        {
+            UI.Shake();
+            meshRenderer.enabled = false;
+            sound.Play();
+            Destroy(gameObject, 1f);
+        }
     }
 }
