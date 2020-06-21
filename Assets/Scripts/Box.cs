@@ -7,7 +7,7 @@ public class Box : MonoBehaviour
 {
     Animator Animator;
     AudioSource sound;
-    [SerializeField] bool go;
+    public bool go;
     [SerializeField] AudioClip[] audioClips;
 
     ParticleSystem boom;
@@ -21,7 +21,7 @@ public class Box : MonoBehaviour
         Animator = GetComponent<Animator>();
         sound = GetComponent<AudioSource>();
         boom = GetComponentInChildren<ParticleSystem>();
-        boom.Stop();
+        if(boom) boom.Stop();
         //CoeffOfMovingSpeed = 1;
         speed = 2;
         //go = false;
