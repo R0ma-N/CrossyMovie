@@ -49,7 +49,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3e84c09e67b4b084ab069bf1dc42e69d, type: 2}
+  - {fileID: 2100000, guid: 262d9b100279cc04c8148898c3d0e2fb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -146,8 +146,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627976007207170320}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -12.11, y: 0, z: -31.96}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -22, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7296366759075948283}
@@ -155,7 +155,7 @@ Transform:
   - {fileID: 7277762408734595180}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!95 &5640443612823252601
 Animator:
   serializedVersion: 3
@@ -412,7 +412,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b28c1ded8c3d129448f5db56d1549abb, type: 2}
+  - {fileID: 2100000, guid: 83b21149402275944b639846feae7c74, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -442,8 +442,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.004309058, y: -0.84193903, z: 0.60286283}
-    m_Extent: {x: 0.28969166, y: 0.84193903, z: 0.15323347}
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0.2853829, y: 0.000000017898856, z: 0.7560964}
   m_DirtyAABB: 0
 --- !u!183 &2271312456330355673
 Cloth:
@@ -782,7 +782,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b28c1ded8c3d129448f5db56d1549abb, type: 2}
+  - {fileID: 2100000, guid: 83b21149402275944b639846feae7c74, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -891,7 +891,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b28c1ded8c3d129448f5db56d1549abb, type: 2}
+  - {fileID: 2100000, guid: 83b21149402275944b639846feae7c74, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -921,8 +921,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.0012114346, y: -0.7117956, z: 0.2748546}
-    m_Extent: {x: 0.28840256, y: 0.7117956, z: 0.48124188}
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0.2853829, y: 0.000000039984734, z: 0.7560966}
   m_DirtyAABB: 0
 --- !u!183 &2271312457235611872
 Cloth:
@@ -937,8 +937,8 @@ Cloth:
   m_UseTethers: 1
   m_UseGravity: 1
   m_Damping: 0.2
-  m_ExternalAcceleration: {x: 0, y: 0, z: -6}
-  m_RandomAcceleration: {x: 10, y: 0, z: 15}
+  m_ExternalAcceleration: {x: 5, y: 0, z: -6}
+  m_RandomAcceleration: {x: 10, y: 5, z: 15}
   m_WorldVelocityScale: 0.5
   m_WorldAccelerationScale: 0.2
   m_Friction: 1

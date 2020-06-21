@@ -1,0 +1,281 @@
+fileFormatVersion: 2
+guid: 8fc2d2d48941c40c79776774096dc427
+ModelImporter:
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: Explorer_LOD0
+  - first:
+      1: 100004
+    second: Explorer_LOD1
+  - first:
+      1: 100006
+    second: Explorer_LOD2
+  - first:
+      1: 100008
+    second: Explorer_LOD3
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Explorer_LOD0
+  - first:
+      4: 400004
+    second: Explorer_LOD1
+  - first:
+      4: 400006
+    second: Explorer_LOD2
+  - first:
+      4: 400008
+    second: Explorer_LOD3
+  - first:
+      21: 2100000
+    second: Headstock
+  - first:
+      21: 2100002
+    second: Main
+  - first:
+      21: 2100004
+    second: Strings
+  - first:
+      21: 2100006
+    second: Trim1
+  - first:
+      21: 2100008
+    second: Black
+  - first:
+      21: 2100010
+    second: DarkSilver
+  - first:
+      21: 2100012
+    second: Frets
+  - first:
+      21: 2100014
+    second: EdgeRim
+  - first:
+      21: 2100016
+    second: Wood
+  - first:
+      21: 2100018
+    second: Trim2
+  - first:
+      21: 2100020
+    second: FRETBOARD
+  - first:
+      21: 2100022
+    second: Rim
+  - first:
+      21: 2100024
+    second: Pickupedge
+  - first:
+      21: 2100026
+    second: Pickguard
+  - first:
+      23: 2300000
+    second: Explorer_LOD0
+  - first:
+      23: 2300002
+    second: Explorer_LOD1
+  - first:
+      23: 2300004
+    second: Explorer_LOD2
+  - first:
+      23: 2300006
+    second: Explorer_LOD3
+  - first:
+      33: 3300000
+    second: Explorer_LOD0
+  - first:
+      33: 3300002
+    second: Explorer_LOD1
+  - first:
+      33: 3300004
+    second: Explorer_LOD2
+  - first:
+      33: 3300006
+    second: Explorer_LOD3
+  - first:
+      43: 4300000
+    second: Explorer_LOD3
+  - first:
+      43: 4300002
+    second: Explorer_LOD2
+  - first:
+      43: 4300004
+    second: Explorer_LOD1
+  - first:
+      43: 4300006
+    second: Explorer_LOD0
+  - first:
+      205: 20500000
+    second: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black
+    second: {fileID: 2100000, guid: 209d4fd4869ca4d71848a6019afe63e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DarkSilver
+    second: {fileID: 2100000, guid: 1231ff6f5286dc048b8c294668c600f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EdgeRim
+    second: {fileID: 2100000, guid: 0ddb1fb2a5edf4646956ec70b20ad5f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FRETBOARD
+    second: {fileID: 2100000, guid: 73df9d200706ab344958385674d955f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Frets
+    second: {fileID: 2100000, guid: e4e677cad76c8ff49939357b2e73d282, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Headstock
+    second: {fileID: 2100000, guid: 5ede7623a480f3c41af6917f80be85b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main
+    second: {fileID: 2100000, guid: 3fa8e6bd681784fe1902a2f094962a13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pickguard
+    second: {fileID: 2100000, guid: c5e621580283c6840a2d53790afcb9e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pickupedge
+    second: {fileID: 2100000, guid: 367b9e27302965049a89ce6d37aebd0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rim
+    second: {fileID: 2100000, guid: 51dc66baaa2318a46b6b9c8439c4e946, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Strings
+    second: {fileID: 2100000, guid: b7c6f0ad9e1042b45a052269953b1eeb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trim1
+    second: {fileID: 2100000, guid: dd82c2005272e3745b49cd10b1aa7767, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trim2
+    second: {fileID: 2100000, guid: 4d74618dcb76f7548ba127de2a1f15d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: e9636d60ee4a1214dbba40f3ad2c3b48, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages:
+    - 0.25
+    - 0.125
+    - 0.0625
+    - 0.01
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 0
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
