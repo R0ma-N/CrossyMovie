@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+//using System.Numerics;
 using UnityEngine;
 
 public class Camera : MonoBehaviour
@@ -11,6 +12,7 @@ public class Camera : MonoBehaviour
     private void Awake()
     {
         player = GameObject.FindObjectOfType<Box>().transform;
+        transform.rotation = Quaternion.Euler(26.2f, 45, 0);
     }
 
     private void Update()

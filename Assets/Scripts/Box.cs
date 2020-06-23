@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Box : MonoBehaviour
 {
     Animator Animator;
+    SkinnedMeshRenderer meshRenderer;
     AudioSource sound;
     public bool go;
     [SerializeField] AudioClip[] audioClips;
@@ -19,6 +21,7 @@ public class Box : MonoBehaviour
     void Start()
     {
         Animator = GetComponent<Animator>();
+        meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         sound = GetComponent<AudioSource>();
         boom = GetComponentInChildren<ParticleSystem>();
         if(boom) boom.Stop();
@@ -121,6 +124,18 @@ public class Box : MonoBehaviour
     public void Stop()
     {
         go = false;
+    }
+
+    public void Portal(string state)
+    {
+        if (state == "enter")
+        {
+            meshRenderer.shadowCastingMode = ShadowCastingMode.Off;
+        }
+        else if (state == "out")
+        {
+            meshRenderer.shadowCastingMode = ShadowCastingMode.On;
+        }
     }
 
 }
