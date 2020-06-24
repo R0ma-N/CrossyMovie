@@ -235,7 +235,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: JumpSaw
+    m_ConditionEvent: Short Jump
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4409167889200069613}
@@ -622,8 +622,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 5060623298081256174, guid: 45b1376dab841d147aec64e00b10ab29,
-    type: 3}
+  m_Motion: {fileID: -93624505752436512, guid: 45b1376dab841d147aec64e00b10ab29, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1160,7 +1159,7 @@ AnimatorStateMachine:
     m_Position: {x: 700, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4409167889200069613}
-    m_Position: {x: 380, y: 500, z: 0}
+    m_Position: {x: 360, y: 520, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
