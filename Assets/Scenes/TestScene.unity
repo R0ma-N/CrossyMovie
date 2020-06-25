@@ -742,7 +742,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340445206}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48, y: 2.5, z: 6}
+  m_LocalPosition: {x: 49, y: 2.5, z: 5}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -921,7 +921,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &484561745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -934,58 +934,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d325ad5c20af04ea6c117dde780f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Up:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: -0.00030434178
-      value: 0.009228706
-      inSlope: 1.0522995
-      outSlope: 1.0522995
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.15432769
-    - serializedVersion: 3
-      time: 0.9999545
-      value: -0.0034708977
-      inSlope: -5.56875
-      outSlope: -5.56875
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.06893775
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  Forward:
+  start: {fileID: 1198118627}
+  end: {fileID: 658257540}
+  Curve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: -0.00028186198
-      inSlope: 1.0061499
-      outSlope: 1.0061499
-      tangentMode: 34
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 1.0058681
-      inSlope: 1.0061499
-      outSlope: 1.0061499
-      tangentMode: 34
+      value: 0
+      inSlope: -4.578744
+      outSlope: -4.578744
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.027917504
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  startMarker: {fileID: 1198118627}
-  endMarker: {fileID: 658257540}
-  speed: 1
-  canJump: 0
+  LerpOffset: {x: 0, y: 2, z: 0}
+  LerpTime: 1
+  _timer: 0
 --- !u!65 &484561746
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1053,13 +1030,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484561744}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4, y: 2.5, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &484589318 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8037735563128285486, guid: af8e1a9b308f45245bdcb1176f2af063,
@@ -1183,13 +1160,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658257539}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 2.5, z: 6}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 2.5, y: 2.5, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &700426901
 GameObject:
   m_ObjectHideFlags: 0
@@ -2526,7 +2503,7 @@ PrefabInstance:
     - target: {fileID: 653841257000179519, guid: e69195a557eb0294291b34f5cc061fe7,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2692200841828152639, guid: e69195a557eb0294291b34f5cc061fe7,
         type: 3}
@@ -3092,6 +3069,11 @@ PrefabInstance:
         type: 3}
       propertyPath: SideJumpForward.m_Curve.Array.data[1].inWeight
       value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805386364294242608, guid: e69195a557eb0294291b34f5cc061fe7,
+        type: 3}
+      propertyPath: rotation
+      value: 0.557
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e69195a557eb0294291b34f5cc061fe7, type: 3}

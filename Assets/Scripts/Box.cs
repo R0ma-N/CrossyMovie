@@ -6,6 +6,8 @@ using UnityEngine.Rendering;
 
 public class Box : MonoBehaviour
 {
+    public float rotation;
+    
     Animator Animator;
     SkinnedMeshRenderer meshRenderer;
     public AnimationCurve SaltoUp, SaltoForward, SideJumpUp, SideJumpForward;
@@ -81,7 +83,8 @@ public class Box : MonoBehaviour
                 transform.position.x,
                 startPosition.y + SideJumpUp.Evaluate(timeElapsed),
                 startPosition.z + SideJumpForward.Evaluate(timeElapsed));
-            transform.rotation = Quaternion.Lerp(Quaternion.identity, new Quaternion(0, 90, 0, 0), 10 * Time.deltaTime);
+
+            transform.rotation = Quaternion.Lerp(Quaternion.identity, new Quaternion(0, 90, 0, 0), rotation * Time.deltaTime);
 
             _doLeftSideJump = Jump;
         }
@@ -188,6 +191,13 @@ public class Box : MonoBehaviour
     public void InSideJumpSector(bool state)
     {
         _inLeftSideJumpSector = state;
+        /////////////
+        if (state)
+        {
+        LeftJump();
+        _doLeftSideJump = true;
+
+        }
     }
 
     public void Portal(string state)
