@@ -12,7 +12,6 @@ public class Test : MonoBehaviour
 
     void Start()
     {
-        //LerpTime = 3f;
         _timer = 0;
     }
 
@@ -29,29 +28,7 @@ public class Test : MonoBehaviour
 
         Vector3 positionOffset = Curve.Evaluate(LerpRatio) * LerpOffset;
 
-        transform.position = Vector3.Lerp(start.position, end.position, LerpRatio) + positionOffset;
-        transform.rotation = Quaternion.Lerp(transform.rotation, end.rotation, 2.8f * Time.deltaTime);
+        transform.position = Vector3.Lerp(start.position, new Vector3(start.position.x + 3, start.position.y, start.position.z), LerpRatio) + positionOffset;
+        //transform.rotation = Quaternion.Slerp(transform.rotation, end.rotation, LerpRatio/5);
     }
-
-    //void swtch() 
-    //{
-    //    if (canJump)
-    //    {
-    //        canJump = false;
-    //    }
-    //    else
-    //    {
-    //        timeElapsed = 0;
-    //        startPosition = transform.position;
-    //        canJump = true;
-    //    }
-    //}
-
-
-    //void Jump()
-    //{
-    //    float distCovered = (Time.time - startTime) * speed;
-    //    float fractionOfJourney = distCovered / journeyLength;
-    //    transform.position = Vector3.Lerp(startMarker.position, endMarker.position, fractionOfJourney);
-    //}
 }

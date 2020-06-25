@@ -318,7 +318,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.80833334
+      - time: 0.7784188
         functionName: OnConveyor
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c908ba9c88f01804db813cf460355dd8,
@@ -326,7 +326,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.81316346
+      - time: 0.7896592
         functionName: Boom
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c908ba9c88f01804db813cf460355dd8,

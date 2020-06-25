@@ -14,18 +14,24 @@ public class Box : MonoBehaviour
     ParticleSystem boom;
     AudioSource sound;
     [SerializeField] AudioClip[] audioClips;
+
     public bool go;
+
     private Vector3 startPosition;
+    public Vector3 LerpOffsetX;
+    public Vector3 LerpOffsetY;
+    public Transform target;
+    public float LerpTime, _timer;
+    //float timeElapsed;
+
     public bool canJump;
     public bool Jump;
-    float timeElapsed;
-
+    
     public float CoeffOfMovingSpeed;
     private float speed;
 
     private bool _inSaltoSector;
     private bool _inLeftSideJumpSector;
-
     private bool _doSalto;
     private bool _doLeftSideJump;
 
@@ -66,27 +72,45 @@ public class Box : MonoBehaviour
 
         if (Jump && _doSalto)
         {
-            timeElapsed += Time.deltaTime;
-            transform.position = new Vector3(
-                startPosition.x + SaltoForward.Evaluate(timeElapsed) * CoeffOfMovingSpeed, 
-                startPosition.y + SaltoUp.Evaluate(timeElapsed), 
-                transform.position.z);
+            _timer += Time.deltaTime;
+
+            if (_timer > LerpTime)
+            {
+                _timer = LerpTime;
+            }
+
+            float LerpRatio = _timer / LerpTime;
+            Vector3 positionOffsetY = SaltoUp.Evaluate(LerpRatio) * LerpOffsetY;
+            Vector3 positionOffsetX = SaltoForward.Evaluate(LerpRatio) * LerpOffsetX;
+
+            transform.position = Vector3.Lerp(
+                startPosition,
+                new Vector3(startPosition.x + 8, startPosition.y, startPosition.z),
+                LerpRatio) + positionOffsetX + positionOffsetY;
 
             _doSalto = Jump;
         }
 
         if (Jump && _doLeftSideJump)
         {
-            print("LeftJump");
-            timeElapsed += Time.deltaTime;
-            transform.position = new Vector3(
-                transform.position.x,
-                startPosition.y + SideJumpUp.Evaluate(timeElapsed),
-                startPosition.z + SideJumpForward.Evaluate(timeElapsed));
+            _timer += Time.deltaTime;
 
-            transform.rotation = Quaternion.Lerp(Quaternion.identity, new Quaternion(0, 90, 0, 0), rotation * Time.deltaTime);
+            if (_timer > LerpTime)
+            {
+                _timer = LerpTime;
+            }
 
-            _doLeftSideJump = Jump;
+            float LerpRatio = _timer / LerpTime;
+            Vector3 positionOffsetX = SideJumpForward.Evaluate(LerpRatio) * LerpOffsetX;
+
+            transform.position = Vector3.Slerp(
+                startPosition,
+                target.position,
+                LerpRatio) + positionOffsetX;
+
+            transform.rotation = Quaternion.Slerp(Quaternion.identity, target.rotation, 1);
+
+            //_doLeftSideJump = Jump;
         }
 
     }
@@ -95,7 +119,7 @@ public class Box : MonoBehaviour
     {
         go = false;
         canJump = false;
-        timeElapsed = 0;
+        _timer = 0;
         startPosition = transform.position;
         Jump = true;
     }
