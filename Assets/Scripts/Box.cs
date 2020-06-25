@@ -8,7 +8,7 @@ public class Box : MonoBehaviour
 {
     Animator Animator;
     SkinnedMeshRenderer meshRenderer;
-    public AnimationCurve Up, Forward;
+    public AnimationCurve SaltoUp, SaltoForward, SideJumpUp, SideJumpForward;
     ParticleSystem boom;
     AudioSource sound;
     [SerializeField] AudioClip[] audioClips;
@@ -20,6 +20,12 @@ public class Box : MonoBehaviour
 
     public float CoeffOfMovingSpeed;
     private float speed;
+
+    private bool _inSaltoSector;
+    private bool _inLeftSideJumpSector;
+
+    private bool _doSalto;
+    private bool _doLeftSideJump;
 
     void Start()
     {
@@ -39,18 +45,45 @@ public class Box : MonoBehaviour
             transform.Translate(Vector3.left * Time.deltaTime * speed * CoeffOfMovingSpeed);
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canJump)
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            JumpSaw();
+            if (canJump)
+            {
+                if (_inSaltoSector)
+                {
+                    Salto();
+                    _doSalto = true;
+                }
+                else if (_inLeftSideJumpSector)
+                {
+                    LeftJump();
+                    _doLeftSideJump = true;
+                }
+            }
         }
 
-        if (Jump)
+        if (Jump && _doSalto)
         {
             timeElapsed += Time.deltaTime;
             transform.position = new Vector3(
-                startPosition.x + Forward.Evaluate(timeElapsed) * CoeffOfMovingSpeed, 
-                startPosition.y + Up.Evaluate(timeElapsed), 
+                startPosition.x + SaltoForward.Evaluate(timeElapsed) * CoeffOfMovingSpeed, 
+                startPosition.y + SaltoUp.Evaluate(timeElapsed), 
                 transform.position.z);
+
+            _doSalto = Jump;
+        }
+
+        if (Jump && _doLeftSideJump)
+        {
+            print("LeftJump");
+            timeElapsed += Time.deltaTime;
+            transform.position = new Vector3(
+                transform.position.x,
+                startPosition.y + SideJumpUp.Evaluate(timeElapsed),
+                startPosition.z + SideJumpForward.Evaluate(timeElapsed));
+            transform.rotation = Quaternion.Lerp(Quaternion.identity, new Quaternion(0, 90, 0, 0), 10 * Time.deltaTime);
+
+            _doLeftSideJump = Jump;
         }
 
     }
@@ -111,7 +144,7 @@ public class Box : MonoBehaviour
         go = false;
     }
 
-    public void JumpSaw()
+    public void Salto()
     {
         Animator.SetTrigger("JumpSaw");
         sound.clip = audioClips[2];
@@ -123,7 +156,10 @@ public class Box : MonoBehaviour
         Animator.SetTrigger("JumpToLeft");
         sound.clip = audioClips[4];
         sound.PlayDelayed(0.1f);
+
+        _inLeftSideJumpSector = true;
     }
+
     internal void RightJump()
     {
         Animator.SetTrigger("JumpToRight");
@@ -142,6 +178,16 @@ public class Box : MonoBehaviour
     public void Stop()
     {
         go = false;
+    }
+
+    public void InSaltoSector(bool state)
+    {
+        _inSaltoSector = state;
+    }
+
+    public void InSideJumpSector(bool state)
+    {
+        _inLeftSideJumpSector = state;
     }
 
     public void Portal(string state)
