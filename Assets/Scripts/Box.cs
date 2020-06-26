@@ -6,29 +6,36 @@ using UnityEngine.Rendering;
 
 public class Box : MonoBehaviour
 {
-    public float rotation;
-    
+    public AnimationCurve SaltoUp, SaltoForward, SideJumpUp, SideJumpForward;
     Animator Animator;
     SkinnedMeshRenderer meshRenderer;
-    public AnimationCurve SaltoUp, SaltoForward, SideJumpUp, SideJumpForward;
     ParticleSystem boom;
     AudioSource sound;
     [SerializeField] AudioClip[] audioClips;
 
     public bool go;
 
-    private Vector3 startPosition;
-    public Vector3 LerpOffsetX;
-    public Vector3 LerpOffsetY;
-    public Transform target;
-    public float LerpTime, _timer;
-    //float timeElapsed;
-
-    public bool canJump;
-    public bool Jump;
-    
+    //For game speed control
     public float CoeffOfMovingSpeed;
     private float speed;
+
+    //For Jumps
+    private Vector3 startPosition;
+    public float _timer;
+    public bool canJump;
+    public bool Jump;
+
+    //For Salto
+    public Vector3 LerpOffsetY;
+    public float LerpTimeSalto = 1.15f;
+
+    //For Side Jump
+    public Vector3 LerpOffsetX;
+    public float LerpTimeSideJump;
+    public Transform TargetForSideJump;
+    public Transform target;
+
+    
 
     private bool _inSaltoSector;
     private bool _inLeftSideJumpSector;
@@ -48,6 +55,8 @@ public class Box : MonoBehaviour
 
     void Update()
     {
+
+
         if (go)
         {
             transform.Translate(Vector3.left * Time.deltaTime * speed * CoeffOfMovingSpeed);
@@ -74,12 +83,12 @@ public class Box : MonoBehaviour
         {
             _timer += Time.deltaTime;
 
-            if (_timer > LerpTime)
+            if (_timer > LerpTimeSalto)
             {
-                _timer = LerpTime;
+                _timer = LerpTimeSalto;
             }
 
-            float LerpRatio = _timer / LerpTime;
+            float LerpRatio = _timer / LerpTimeSalto;
             Vector3 positionOffsetY = SaltoUp.Evaluate(LerpRatio) * LerpOffsetY;
             Vector3 positionOffsetX = SaltoForward.Evaluate(LerpRatio) * LerpOffsetX;
 
@@ -93,22 +102,31 @@ public class Box : MonoBehaviour
 
         if (Jump && _doLeftSideJump)
         {
+            //TODO изменить плюс оффсета для других положений. помимо positionOffsetX
+
             _timer += Time.deltaTime;
 
-            if (_timer > LerpTime)
+            if (_timer > LerpTimeSideJump)
             {
-                _timer = LerpTime;
+                _timer = LerpTimeSideJump;
             }
 
-            float LerpRatio = _timer / LerpTime;
+            float LerpRatio = _timer / LerpTimeSideJump;
             Vector3 positionOffsetX = SideJumpForward.Evaluate(LerpRatio) * LerpOffsetX;
 
             transform.position = Vector3.Slerp(
                 startPosition,
-                target.position,
+                TargetForSideJump.position,
                 LerpRatio) + positionOffsetX;
 
-            transform.rotation = Quaternion.Slerp(Quaternion.identity, target.rotation, 1);
+            transform.rotation = Quaternion.Slerp(Quaternion.identity, TargetForSideJump.rotation, 1);
+
+            if (TargetForSideJump)
+            {
+                RaycastHit hit;
+                Ray Ray = new Ray(transform.position, TargetForSideJump.position);
+                if (Physics.Raycast(Ray, out hit)) print("Hit target at " + hit.distance + " meters");
+            }
 
             //_doLeftSideJump = Jump;
         }
