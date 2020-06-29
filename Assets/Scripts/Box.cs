@@ -39,9 +39,9 @@ public class Box : MonoBehaviour
     public Transform TargetForSideJump;
     private Quaternion startRotation;
 
-    private bool _inSaltoSector;
+    [SerializeField] private bool _inSaltoSector;
     private bool _doSalto;
-    private bool _inLeftSideJumpSector;
+    [SerializeField] private bool _inLeftSideJumpSector;
     private bool _doSideJump;
 
     void Start()
@@ -57,33 +57,34 @@ public class Box : MonoBehaviour
 
     void Update()
     {
+        if (previousPosition != transform.position)
+        {
+            VectorNormDirection = (previousPosition - transform.position).normalized;
+
+            if (VectorNormDirection.x == -1 & VectorNormDirection.y == 0 & VectorNormDirection.z == 0)
+            {
+                movementDirection = MovementDirection.Forward;
+            }
+            else if (VectorNormDirection.x == 1 & VectorNormDirection.z == 0)
+            {
+                movementDirection = MovementDirection.Back;
+            }
+            else if (VectorNormDirection.x <= 0 & VectorNormDirection.y <= 0 & VectorNormDirection.z == -1)
+            {
+                movementDirection = MovementDirection.Left;
+            }
+            else if (VectorNormDirection.x <= 0 & VectorNormDirection.z == 1)
+            {
+                movementDirection = MovementDirection.Right;
+            }
+        }
+
+        previousPosition = transform.position;
+
         if (go)
         {
             transform.Translate(Vector3.left * Time.deltaTime * speed * CoeffOfMovingSpeed);
 
-            if (previousPosition != transform.position)
-            {
-                VectorNormDirection = (previousPosition - transform.position).normalized;
-
-                if (VectorNormDirection.x == -1)
-                {
-                    movementDirection = MovementDirection.Forward;
-                }
-                else if (VectorNormDirection.x == 1)
-                {
-                    movementDirection = MovementDirection.Back;
-                }
-                else if (VectorNormDirection.z == -1)
-                {
-                    movementDirection = MovementDirection.Left;
-                }
-                else if (VectorNormDirection.z == 1)
-                {
-                    movementDirection = MovementDirection.Right;
-                }
-            }
-
-            previousPosition = transform.position;
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -93,11 +94,11 @@ public class Box : MonoBehaviour
                 if (_inSaltoSector)
                 {
                     Salto();
-                    TargetForSideJump = null;
                     _doSalto = true;
+                    
                 }
 
-                else if (_inLeftSideJumpSector)
+                if (_inLeftSideJumpSector)
                 {
                     if (transform.position.z < TargetForSideJump.position.z && movementDirection == MovementDirection.Forward ||
                         transform.position.x > TargetForSideJump.position.x && movementDirection == MovementDirection.Left)
@@ -114,8 +115,7 @@ public class Box : MonoBehaviour
             }
         }
 
-
-        if (Jump && _doSalto)
+        if (_doSalto & Jump)
         {
             _timer += Time.deltaTime;
 
@@ -136,22 +136,34 @@ public class Box : MonoBehaviour
                     startPosition,
                     new Vector3(startPosition.x + 8, startPosition.y, startPosition.z),
                     LerpRatio) + positionOffsetX + positionOffsetY;
+                    print("forward jump");
                     break;
                 case MovementDirection.Back:
                     transform.position = Vector3.Lerp(
                     startPosition,
                     new Vector3(startPosition.x - 8, startPosition.y, startPosition.z),
                     LerpRatio) - positionOffsetX + positionOffsetY;
+                    print("back jump");
                     break;
-
+                case MovementDirection.Right:
+                    transform.position = Vector3.Lerp(
+                    startPosition,
+                    new Vector3(startPosition.x, startPosition.y, startPosition.z - 8),
+                    LerpRatio) + positionOffsetY + positionOffsetX;
+                    print("right jump");
+                    break;
+                case MovementDirection.Left:
+                    transform.position = Vector3.Lerp(
+                    startPosition,
+                    new Vector3(startPosition.x, startPosition.y, startPosition.z + 8),
+                    LerpRatio) + positionOffsetY + positionOffsetX;
+                    print("left jump");
+                    break;
             }
-
-            _doSalto = Jump;
         }
 
-        if (Jump && _doSideJump)
+        if (_doSideJump & Jump)
         {
-
             _timer += Time.deltaTime;
 
             if (_timer > LerpTimeSideJump)
@@ -163,8 +175,6 @@ public class Box : MonoBehaviour
 
             transform.position = Vector3.Lerp(startPosition, TargetForSideJump.position, LerpRatio);
             transform.rotation = Quaternion.Lerp(startRotation, TargetForSideJump.rotation, LerpRatio);
-
-            _doSideJump = Jump;
         }
     }
 
@@ -176,12 +186,17 @@ public class Box : MonoBehaviour
         startPosition = transform.position;
         startRotation = transform.rotation;
         Jump = true;
+        print(VectorNormDirection);
+        print(movementDirection);
     }
+
     public void OnConveyor()
     {
         go = true;
         canJump = true;
         Jump = false;
+        _doSideJump = false;
+        _doSalto = false;
     }
 
     internal void Falling()
