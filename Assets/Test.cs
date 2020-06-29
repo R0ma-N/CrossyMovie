@@ -26,9 +26,12 @@ public class Test : MonoBehaviour
 
         float LerpRatio = _timer / LerpTime;
 
-        Vector3 positionOffset = Curve.Evaluate(LerpRatio) * LerpOffset;
+        //Vector3 positionOffset = Curve.Evaluate(LerpRatio) * LerpOffset;
 
-        transform.position = Vector3.Lerp(start.position, new Vector3(start.position.x + 3, start.position.y, start.position.z), LerpRatio) + positionOffset;
-        //transform.rotation = Quaternion.Slerp(transform.rotation, end.rotation, LerpRatio/5);
+        // transform.position = Vector3.Lerp(start.position, end.position, LerpRatio) + positionOffset;
+
+        transform.position = Vector3.Lerp(start.position, end.position, LerpRatio);
+        transform.rotation = Quaternion.Lerp(start.rotation, end.rotation, LerpRatio);
+
     }
 }
