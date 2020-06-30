@@ -297,7 +297,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c908ba9c88f01804db813cf460355dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  go: 0
+  SaltoUp:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  SaltoForward:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  AutoPlay: {fileID: 9100000, guid: bca934a7843bdc24e9bb6e3f3f26e745, type: 2}
+  UsualPlay: {fileID: 9100000, guid: a45b67a765bdab04aaa6b5b900408219, type: 2}
   audioClips:
   - {fileID: 8300000, guid: 01acbb25ef4671d4e9057560b528368a, type: 3}
   - {fileID: 8300000, guid: ca605f0425e2a954989b6c39a7ae9452, type: 3}
@@ -307,7 +320,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 235509a687da9bc43a70e19e989df686, type: 3}
   - {fileID: 8300000, guid: d5b7d59bfcf54c64ba565724f3866885, type: 3}
   - {fileID: 0}
+  AutomaticPlay: 0
+  go: 0
   CoeffOfMovingSpeed: 2
+  _timer: 0
+  canJump: 0
+  Jump: 0
+  LerpOffsetY: {x: 0, y: 0, z: 0}
+  LerpOffsetX: {x: 0, y: 0, z: 0}
+  LerpTimeSalto: 1.15
+  LerpTimeSideJump: 0
+  TargetForSideJump: {fileID: 0}
+  _inSaltoSector: 0
+  _inLeftSideJumpSector: 0
 --- !u!1 &2268705571491955001
 GameObject:
   m_ObjectHideFlags: 0

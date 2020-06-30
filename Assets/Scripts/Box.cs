@@ -9,10 +9,13 @@ public class Box : MonoBehaviour
 {
     public AnimationCurve SaltoUp, SaltoForward;
     Animator Animator;
+    public RuntimeAnimatorController AutoPlay, UsualPlay;
     SkinnedMeshRenderer meshRenderer;
     ParticleSystem boom;
     AudioSource sound;
     [SerializeField] AudioClip[] audioClips = null;
+
+    public bool AutomaticPlay;
 
     //For moving
     public bool go;
@@ -53,129 +56,155 @@ public class Box : MonoBehaviour
         if(boom) boom.Stop();
         Jump = false;
         speed = 2;
+
+        if (AutomaticPlay)
+        {
+            Animator.runtimeAnimatorController = AutoPlay;
+        }
+        else
+        {
+            Animator.runtimeAnimatorController = UsualPlay;
+        }
     }
 
     void Update()
     {
-        if (previousPosition != transform.position)
+        if (AutomaticPlay)
         {
-            VectorNormDirection = (previousPosition - transform.position).normalized;
+            if (go)
+            {
+                transform.Translate(Vector3.left * Time.deltaTime * speed * CoeffOfMovingSpeed);
+            }
 
-            if (VectorNormDirection.x == -1 & VectorNormDirection.y == 0 & VectorNormDirection.z == 0)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                movementDirection = MovementDirection.Forward;
-            }
-            else if (VectorNormDirection.x == 1 & VectorNormDirection.z == 0)
-            {
-                movementDirection = MovementDirection.Back;
-            }
-            else if (VectorNormDirection.x <= 0 & VectorNormDirection.y <= 0 & VectorNormDirection.z == -1)
-            {
-                movementDirection = MovementDirection.Left;
-            }
-            else if (VectorNormDirection.x <= 0 & VectorNormDirection.z == 1)
-            {
-                movementDirection = MovementDirection.Right;
+                Salto();
             }
         }
-
-        previousPosition = transform.position;
-
-        if (go)
+        else
         {
-            transform.Translate(Vector3.left * Time.deltaTime * speed * CoeffOfMovingSpeed);
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            if (canJump)
+            if (previousPosition != transform.position)
             {
-                if (_inSaltoSector)
+                VectorNormDirection = (previousPosition - transform.position).normalized;
+
+                if (VectorNormDirection.x == -1 & VectorNormDirection.y == 0 & VectorNormDirection.z == 0)
                 {
-                    Salto();
-                    _doSalto = true;
-                    
+                    movementDirection = MovementDirection.Forward;
                 }
-
-                if (_inLeftSideJumpSector)
+                else if (VectorNormDirection.x == 1 & VectorNormDirection.z == 0)
                 {
-                    if (transform.position.z < TargetForSideJump.position.z && movementDirection == MovementDirection.Forward ||
-                        transform.position.x > TargetForSideJump.position.x && movementDirection == MovementDirection.Left)
-                    {
-                        LeftJump();
-                        _doSideJump = true;
-                    }
-                    else
-                    {
-                        RightJump();
-                        _doSideJump = true;
-                    }
+                    movementDirection = MovementDirection.Back;
+                }
+                else if (VectorNormDirection.x <= 0 & VectorNormDirection.y <= 0 & VectorNormDirection.z == -1)
+                {
+                    movementDirection = MovementDirection.Left;
+                }
+                else if (VectorNormDirection.x <= 0 & VectorNormDirection.z == 1)
+                {
+                    movementDirection = MovementDirection.Right;
                 }
             }
-        }
 
-        if (_doSalto & Jump)
-        {
-            _timer += Time.deltaTime;
+            previousPosition = transform.position;
 
-            if (_timer > LerpTimeSalto)
+            if (go)
             {
-                _timer = LerpTimeSalto;
+                transform.Translate(Vector3.left * Time.deltaTime * speed * CoeffOfMovingSpeed);
+
             }
 
-            float LerpRatio = _timer / LerpTimeSalto;
-
-            Vector3 positionOffsetY = SaltoUp.Evaluate(LerpRatio) * LerpOffsetY;
-            Vector3 positionOffsetX = SaltoForward.Evaluate(LerpRatio) * LerpOffsetX;
-
-            switch (movementDirection)
+            if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                case MovementDirection.Forward:
-                transform.position = Vector3.Lerp(
-                    startPosition,
-                    new Vector3(startPosition.x + 8, startPosition.y, startPosition.z),
-                    LerpRatio) + positionOffsetX + positionOffsetY;
-                    print("forward jump");
-                    break;
-                case MovementDirection.Back:
-                    transform.position = Vector3.Lerp(
-                    startPosition,
-                    new Vector3(startPosition.x - 8, startPosition.y, startPosition.z),
-                    LerpRatio) - positionOffsetX + positionOffsetY;
-                    print("back jump");
-                    break;
-                case MovementDirection.Right:
-                    transform.position = Vector3.Lerp(
-                    startPosition,
-                    new Vector3(startPosition.x, startPosition.y, startPosition.z - 8),
-                    LerpRatio) + positionOffsetY + positionOffsetX;
-                    print("right jump");
-                    break;
-                case MovementDirection.Left:
-                    transform.position = Vector3.Lerp(
-                    startPosition,
-                    new Vector3(startPosition.x, startPosition.y, startPosition.z + 8),
-                    LerpRatio) + positionOffsetY + positionOffsetX;
-                    print("left jump");
-                    break;
-            }
-        }
+                if (canJump)
+                {
+                    if (_inSaltoSector)
+                    {
+                        Salto();
+                        _doSalto = true;
 
-        if (_doSideJump & Jump)
-        {
-            _timer += Time.deltaTime;
+                    }
 
-            if (_timer > LerpTimeSideJump)
-            {
-                _timer = LerpTimeSideJump;
+                    if (_inLeftSideJumpSector)
+                    {
+                        if (transform.position.z < TargetForSideJump.position.z && movementDirection == MovementDirection.Forward ||
+                            transform.position.x > TargetForSideJump.position.x && movementDirection == MovementDirection.Left)
+                        {
+                            LeftJump();
+                            _doSideJump = true;
+                        }
+                        else
+                        {
+                            RightJump();
+                            _doSideJump = true;
+                        }
+                    }
+                }
             }
 
-            float LerpRatio = _timer / LerpTimeSideJump;
+            if (_doSalto & Jump)
+            {
+                _timer += Time.deltaTime;
 
-            transform.position = Vector3.Lerp(startPosition, TargetForSideJump.position, LerpRatio);
-            transform.rotation = Quaternion.Lerp(startRotation, TargetForSideJump.rotation, LerpRatio);
+                if (_timer > LerpTimeSalto)
+                {
+                    _timer = LerpTimeSalto;
+                }
+
+                float LerpRatio = _timer / LerpTimeSalto;
+
+                Vector3 positionOffsetY = SaltoUp.Evaluate(LerpRatio) * LerpOffsetY;
+                Vector3 positionOffsetX = SaltoForward.Evaluate(LerpRatio) * LerpOffsetX;
+
+                switch (movementDirection)
+                {
+                    case MovementDirection.Forward:
+                        transform.position = Vector3.Lerp(
+                            startPosition,
+                            new Vector3(startPosition.x + 8, startPosition.y, startPosition.z),
+                            LerpRatio) + positionOffsetX + positionOffsetY;
+                        print("forward jump");
+                        break;
+                    case MovementDirection.Back:
+                        transform.position = Vector3.Lerp(
+                        startPosition,
+                        new Vector3(startPosition.x - 8, startPosition.y, startPosition.z),
+                        LerpRatio) - positionOffsetX + positionOffsetY;
+                        print("back jump");
+                        break;
+                    case MovementDirection.Right:
+                        transform.position = Vector3.Lerp(
+                        startPosition,
+                        new Vector3(startPosition.x, startPosition.y, startPosition.z - 8),
+                        LerpRatio) + positionOffsetY + positionOffsetX;
+                        print("right jump");
+                        break;
+                    case MovementDirection.Left:
+                        transform.position = Vector3.Lerp(
+                        startPosition,
+                        new Vector3(startPosition.x, startPosition.y, startPosition.z + 8),
+                        LerpRatio) + positionOffsetY + positionOffsetX;
+                        print("left jump");
+                        break;
+                }
+            }
+
+            if (_doSideJump & Jump)
+            {
+                _timer += Time.deltaTime;
+
+                if (_timer > LerpTimeSideJump)
+                {
+                    _timer = LerpTimeSideJump;
+                }
+
+                float LerpRatio = _timer / LerpTimeSideJump;
+
+                transform.position = Vector3.Lerp(startPosition, TargetForSideJump.position, LerpRatio);
+                transform.rotation = Quaternion.Lerp(startRotation, TargetForSideJump.rotation, LerpRatio);
+            }
+
         }
+
     }
 
     public void OutConveyor()
