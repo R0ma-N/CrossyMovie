@@ -8,7 +8,14 @@ public class SaltoSector : MonoBehaviour
     {
         if (other.TryGetComponent<Box>(out Box box))
         {
-            box.InSaltoSector(true);
+            if (box.AutomaticPlay)
+            {
+                box.Salto();
+            }
+            else
+            {
+                box.InSaltoSector(true);
+            }
         }
     }
 

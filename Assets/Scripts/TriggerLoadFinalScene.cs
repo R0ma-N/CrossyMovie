@@ -7,7 +7,9 @@ public class TriggerLoadFinalScene : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        print(999);
-        SceneManager.LoadScene(1);
+        if (other.TryGetComponent<Box>(out Box box))
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 }

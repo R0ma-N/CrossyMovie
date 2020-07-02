@@ -6,6 +6,9 @@ public class Shredder : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        other.gameObject.GetComponent<Box>().Shredder();
+        if (other.TryGetComponent<Box>(out Box box))
+        {
+            box.Shredder();
+        }
     }
 }

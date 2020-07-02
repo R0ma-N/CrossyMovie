@@ -112,9 +112,9 @@ Material:
     - _MKEditorShowReflectionBehavior: 0
     - _MKEditorShowRenderBehavior: 0
     - _MKEditorShowRimBehavior: 1
-    - _MKEditorShowShadowBehavior: 0
+    - _MKEditorShowShadowBehavior: 1
     - _MKEditorShowSketchBehavior: 0
-    - _MKEditorShowSpecularBehavior: 0
+    - _MKEditorShowSpecularBehavior: 1
     - _MKEditorShowTranslucentBehavior: 0
     - _Metallic: 0
     - _Mode: 0
@@ -122,20 +122,20 @@ Material:
     - _OcclusionStrength: 1
     - _Outline: 0.019
     - _OutlineDiffusion: 0
-    - _OutlineSize: 0.0005
+    - _OutlineSize: 0
     - _OutlineThickness: 0.1
     - _Parallax: 0.02
     - _RimIntensity: 0.612
     - _RimMax: 1
     - _RimMin: 0.5
-    - _RimSize: 0.78
+    - _RimSize: 0.27
     - _RimSmoothness: 0.453
     - _ShadowIntensity: 1
-    - _Shininess: 0.474
+    - _Shininess: 0.01
     - _SmoothnessTextureChannel: 0
     - _SpecDiffusion: 0
     - _SpecularHighlights: 1
-    - _SpecularIntensity: 0.5
+    - _SpecularIntensity: 0
     - _SpecularPower: 20
     - _SpecularScale: 0.01
     - _SpecularSegment: 0.79
@@ -147,18 +147,18 @@ Material:
     - _VertexColor: 1
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.93710685, g: 0.9433962, b: 0.7075472, a: 1}
+    - _Color: {r: 1, g: 0.93725497, b: 0, a: 1}
     - _DiffuseColor: {r: 0.95142, g: 1, b: 0.4764151, a: 1}
     - _DiffuseSegment: {r: 0.1, g: 0.3, b: 0.6, a: 1}
     - _EdgeColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HColor: {r: 0.6, g: 0.6, b: 0.6, a: 1}
-    - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _HighlightColor: {r: 0.9960785, g: 0.9686275, b: 0.37254903, a: 1}
     - _OLC: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 0.8, g: 0.8, b: 0.8, a: 0.6}
+    - _RimColor: {r: 0.9333334, g: 0.3647059, b: 0.17254902, a: 1}
     - _SColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
-    - _ShadowColor: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 1}
+    - _ShadowColor: {r: 1, g: 0.68235296, b: 0.18823531, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _Specular: {r: 1, g: 1, b: 1, a: 1}
     - _SpecularColor: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}

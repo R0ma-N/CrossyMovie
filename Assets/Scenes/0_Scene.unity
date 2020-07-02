@@ -2080,11 +2080,11 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 603901771}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 45b1376dab841d147aec64e00b10ab29, type: 3}
   m_Controller: {fileID: 9100000, guid: bca934a7843bdc24e9bb6e3f3f26e745, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -2132,7 +2132,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d5b7d59bfcf54c64ba565724f3866885, type: 3}
   - {fileID: 0}
   AutomaticPlay: 1
-  go: 0
+  go: 1
   CoeffOfMovingSpeed: 2
   _timer: 0
   canJump: 0
@@ -6564,7 +6564,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 4a105dc023caab54f90e4693bd7b2e72,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4a105dc023caab54f90e4693bd7b2e72,
         type: 3}
@@ -7426,7 +7426,7 @@ PrefabInstance:
     - target: {fileID: 5226533974462559322, guid: cc2ace41af9b932439e853ca257b3ab3,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc2ace41af9b932439e853ca257b3ab3, type: 3}

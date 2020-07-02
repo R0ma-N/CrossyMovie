@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &8455669105906134658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466544044241457022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4deda4c233c823547b3f6ba6d9b44bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &929222331421855980
 GameObject:
   m_ObjectHideFlags: 0
@@ -25,13 +37,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929222331421855980}
-  m_LocalRotation: {x: 0.49991274, y: -0.50008726, z: -0.49991274, w: 0.50008726}
-  m_LocalPosition: {x: 0, y: 0.50139594, z: 3.9998252}
+  m_LocalRotation: {x: 0.00017452026, y: -1, z: 0.00017452026, w: 0.000000030457322}
+  m_LocalPosition: {x: 1, y: 0.5022683, z: 6.499825}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9137791986049863678}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.020000001, y: -180, z: -0.020000001}
 --- !u!108 &9221196904055762777
 Light:
   m_ObjectHideFlags: 0
@@ -41,12 +53,12 @@ Light:
   m_GameObject: {fileID: 929222331421855980}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 2
+  m_Type: 0
   m_Shape: 0
   m_Color: {r: 0, g: 1, b: 0.122285604, a: 1}
   m_Intensity: 7.13
   m_Range: 5.1
-  m_SpotAngle: 30
+  m_SpotAngle: 52.144356
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
@@ -175,7 +187,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: ee5e2077ff9a093499be2983332949a6, type: 2}
-  - {fileID: 2100000, guid: d4639af53ed542a4984fab74ac0f50ac, type: 2}
+  - {fileID: 2100000, guid: 37599a71ff73c264594f6a12eb7a2365, type: 2}
   - {fileID: 2100000, guid: d429ca93c9d43c84a93c1f1a8b30f6fd, type: 2}
   - {fileID: 2100000, guid: 2a9c92a22c644be4ea13e5ab0d69b9e6, type: 2}
   m_StaticBatchInfo:
@@ -344,18 +356,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 406ed1fd9ac5552498149574632cc161, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8455669105906134658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 466544044241457022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4deda4c233c823547b3f6ba6d9b44bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &8455669105894708855

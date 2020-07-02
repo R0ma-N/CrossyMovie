@@ -111,6 +111,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
+    - _InvFade: 1
     - _LightSmoothness: 0.231
     - _LightThreshold: 0.29
     - _MKEditorShowDetailBehavior: 0
@@ -131,7 +132,7 @@ Material:
     - _OcclusionStrength: 1
     - _Outline: 0.051
     - _OutlineDiffusion: 0
-    - _OutlineSize: 0.04
+    - _OutlineSize: 0
     - _OutlineThickness: 0.1
     - _Parallax: 0.02
     - _RimIntensity: 0.681
@@ -178,4 +179,5 @@ Material:
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _Specular: {r: 1, g: 1, b: 1, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
     - _UnlitColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

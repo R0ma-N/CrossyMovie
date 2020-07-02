@@ -111,8 +111,8 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _LightSmoothness: 0.231
-    - _LightThreshold: 0.29
+    - _LightSmoothness: 0.19
+    - _LightThreshold: 0.59
     - _MKEditorShowDetailBehavior: 0
     - _MKEditorShowDissolveBehavior: 0
     - _MKEditorShowLightBehavior: 1
@@ -131,20 +131,20 @@ Material:
     - _OcclusionStrength: 1
     - _Outline: 0.051
     - _OutlineDiffusion: 0
-    - _OutlineSize: 0.04
+    - _OutlineSize: 0
     - _OutlineThickness: 0.1
     - _Parallax: 0.02
-    - _RimIntensity: 0.681
+    - _RimIntensity: 0.6
     - _RimMax: 1
     - _RimMin: 0.409
-    - _RimSize: 1.11
+    - _RimSize: 0.75
     - _RimSmoothness: 1
     - _ShadowIntensity: 0.73
-    - _Shininess: 0.01
+    - _Shininess: 0.07
     - _SmoothnessTextureChannel: 0
     - _SpecDiffusion: 0
     - _SpecularHighlights: 1
-    - _SpecularIntensity: 0.092
+    - _SpecularIntensity: 0.19
     - _SpecularPower: 0
     - _SpecularScale: 0.1
     - _SpecularSegment: 0.5
@@ -172,10 +172,10 @@ Material:
     - _HueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
     - _OLC: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 0.8584906, g: 0.7230625, b: 0.40899786, a: 0.6}
+    - _RimColor: {r: 1, g: 0.5372549, b: 0.16470589, a: 1}
     - _SColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
-    - _ShadowColor: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
-    - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ShadowColor: {r: 0.49056602, g: 0.31912234, b: 0.04396581, a: 1}
+    - _SpecColor: {r: 1, g: 0.9294118, b: 0, a: 1}
     - _Specular: {r: 1, g: 1, b: 1, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _UnlitColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
