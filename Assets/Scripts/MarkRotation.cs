@@ -8,6 +8,6 @@ public class MarkRotation : MonoBehaviour
     
     void Update()
     {
-        transform.Rotate(Vector3.up * speedRotation * Time.deltaTime);
+        transform.Rotate(Vector3.up * speedRotation * Time.deltaTime, Space.World);
     }
 }

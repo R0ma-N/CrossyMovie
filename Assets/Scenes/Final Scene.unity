@@ -1079,6 +1079,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 194706, guid: e7aa3eba36ce5d04c84a01925e585932, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 419030, guid: e7aa3eba36ce5d04c84a01925e585932, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.08
@@ -3220,6 +3224,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Statue of Liberty
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: caccbd273f2219d4db6671254612f15c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caccbd273f2219d4db6671254612f15c, type: 3}
 --- !u!33 &2101636352
@@ -3677,7 +3686,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3697537745264569530}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 19.837442, y: 180, z: 180}
+  m_LocalEulerAnglesHint: {x: -18.43, y: 180.00002, z: 180.00002}
 --- !u!1 &2824214795108676850
 GameObject:
   m_ObjectHideFlags: 0

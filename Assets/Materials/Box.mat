@@ -174,8 +174,8 @@ Material:
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 1, g: 0.5372549, b: 0.16470589, a: 1}
     - _SColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
-    - _ShadowColor: {r: 0.49056602, g: 0.31912234, b: 0.04396581, a: 1}
-    - _SpecColor: {r: 1, g: 0.9294118, b: 0, a: 1}
+    - _ShadowColor: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
+    - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _Specular: {r: 1, g: 1, b: 1, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _UnlitColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
