@@ -1,0 +1,210 @@
+fileFormatVersion: 2
+guid: 108e107e2b0d56745b27f32a786d64ef
+ModelImporter:
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      74: 3828046359596925113
+    second: Box_ArmatureCups.001|BoxStartAction
+  - first:
+      74: 3286121179646713385
+    second: Box_ArmatureCups.001|Cup.LeftAction
+  - first:
+      74: -6731757070580682037
+    second: Box_ArmatureCups.001|Cup.LeftAction.001
+  - first:
+      74: -1097741994993712746
+    second: Box_ArmatureCups.001|Cup.rightAction
+  - first:
+      74: 1161154338934425756
+    second: Box_ArmatureCups.001|Cup.rightAction.001
+  - first:
+      74: -4107535359882259634
+    second: Box_ArmatureCups.001|EpicAction
+  - first:
+      74: 6719899209165532640
+    second: Box_ArmatureCups.001|EpicAction.001
+  - first:
+      74: 940752970722900629
+    second: Box_ArmatureCups.001|Idle_Go
+  - first:
+      74: -7859227365930833405
+    second: Box_ArmatureCups.001|Idle_Go.003
+  - first:
+      74: -5164242802316543107
+    second: Box_ArmatureCups.001|Idle_Start
+  - first:
+      74: 6683066508933639280
+    second: Box_ArmatureCups.001|Idle_Start.001
+  - first:
+      74: 1740955074168393767
+    second: Box_ArmatureCups.001|Jump_Small
+  - first:
+      74: -6462343402381260322
+    second: Box_ArmatureCups.001|Jump_Small(no_transform)
+  - first:
+      74: -7554032135864144588
+    second: Box_ArmatureCups.001|Jump_Small(no_transform).001
+  - first:
+      74: 3252592897681035558
+    second: Box_ArmatureCups.001|Jump_to_Left
+  - first:
+      74: 1876553622551539821
+    second: Box_ArmatureCups.001|Jump_to_Left.001
+  - first:
+      74: 1573446231147380325
+    second: Box_ArmatureCups.001|Jump_to_Right
+  - first:
+      74: -377273607952216244
+    second: Box_ArmatureCups.001|Jump_to_Right.001
+  - first:
+      74: -876140214811544221
+    second: Box_ArmatureCups.001|Salto
+  - first:
+      74: 57240258975456550
+    second: Box_ArmatureCups.001|Salto(Landing)
+  - first:
+      74: -7796746361344231746
+    second: Box_ArmatureCups.001|Salto(Landing).001
+  - first:
+      74: -3742707131870429908
+    second: Box_ArmatureCups.001|Salto(no_transform)
+  - first:
+      74: 2396333347632376706
+    second: Box_ArmatureCups.001|Salto(no_transform).001
+  - first:
+      74: -211784069787179885
+    second: Box_ArmatureCups.001|Salto.001
+  - first:
+      74: 184876801620075109
+    second: Box_ArmatureCups.001|Saw
+  - first:
+      74: 4694300551664844184
+    second: Box_ArmatureCups.001|Saw.001
+  - first:
+      74: -46140350951106486
+    second: Box_ArmatureCups.001|Shredder
+  - first:
+      74: 4324703814153156664
+    second: Box_ArmatureCups.001|StarAction
+  - first:
+      74: 8617585247254391498
+    second: Box_ArmatureCups.001|StartCatBody
+  - first:
+      74: -705288841020932226
+    second: Box_ArmatureCups.001|Statue of Liberty|Statue of Liberty|Unpacking.001|Statue
+      of
+  - first:
+      74: 5220496775512529444
+    second: Box_ArmatureCups.001|Statue of Liberty|Statue of Liberty|Unpacking.001|Statue
+      of Lib
+  - first:
+      74: 5394654849526939519
+    second: Box_ArmatureCups.001|Statue of Liberty|Statue of Liberty|Unpacking|Statue
+      of Lib
+  - first:
+      74: 2854759111137776790
+    second: Box_ArmatureCups.001|Statue of Liberty|Statue of Liberty|Unpacking|Statue
+      of Liberty
+  - first:
+      74: -8328347837521607626
+    second: Box_ArmatureCups.001|Unpacking
+  - first:
+      74: 3402953963480859371
+    second: Box_ArmatureCups.001|Unpacking.001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.008
+    second: {fileID: 2100000, guid: ad1dbe31fcbb00c469901c10554faa06, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
