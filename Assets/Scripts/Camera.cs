@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
-    private Transform player;
+    public Transform player;
     public float offsetX = 7;
     public float offsetY = 7;
 
     private void Awake()
     {
-        player = GameObject.FindObjectOfType<Box>().transform;
+        //player = GameObject.FindObjectOfType<Box>().transform;
         transform.rotation = Quaternion.Euler(26.2f, 45, 0);
     }
 
