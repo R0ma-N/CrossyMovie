@@ -8,6 +8,7 @@ using UnityEngine.Rendering;
 public class Box : MonoBehaviour
 {
     public AnimationCurve SaltoUp, SaltoForward;
+    public Animator CatAnimator;
     Animator Animator;
     public RuntimeAnimatorController AutoPlay, UsualPlay;
     SkinnedMeshRenderer meshRenderer;
@@ -221,6 +222,7 @@ public class Box : MonoBehaviour
 
     public void OnConveyor()
     {
+        print("OnConveyor");
         go = true;
         canJump = true;
         Jump = false;
@@ -243,10 +245,13 @@ public class Box : MonoBehaviour
 
     public void Boom()
     {
-        print("BOOM");
-        sound.clip = audioClips[0];
-        sound.Play();
-        boom.Play();
+        if (boom)
+        {
+            print("BOOM");
+            sound.clip = audioClips[0];
+            sound.Play();
+            boom.Play();
+        }
     }
 
     public void Starting()
@@ -263,9 +268,10 @@ public class Box : MonoBehaviour
     public void Saw()
     {
         Animator.SetTrigger("Saw");
+        CatAnimator.SetTrigger("Saw");
+        go = false;
         sound.clip = audioClips[3];
         sound.Play();
-        go = false;
     }
 
     public void Salto()
