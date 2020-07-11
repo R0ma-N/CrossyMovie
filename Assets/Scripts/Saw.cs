@@ -14,6 +14,7 @@ public class Saw : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        print("saw");
         other.gameObject.GetComponent<Box>().Saw();
         cutting.Play();
     }

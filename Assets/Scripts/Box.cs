@@ -230,6 +230,18 @@ public class Box : MonoBehaviour
         _doSalto = false;
     }
 
+    public void HideCat()
+    {
+        print("hide cat");
+        CatAnimator.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
+    }
+
+    public void UnHideCat()
+    {
+        print("unhide cat");
+        CatAnimator.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;
+    }
+
     internal void Falling()
     {
         Animator.SetTrigger("JumpOfFaith");
@@ -270,8 +282,8 @@ public class Box : MonoBehaviour
         Animator.SetTrigger("Saw");
         CatAnimator.SetTrigger("Saw");
         go = false;
-        sound.clip = audioClips[3];
-        sound.Play();
+        //sound.clip = audioClips[3];
+        //sound.Play();
     }
 
     public void Salto()
