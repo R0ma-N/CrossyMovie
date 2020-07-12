@@ -8,7 +8,7 @@ public class TriggerSideJump : MonoBehaviour
     {
         if(other.TryGetComponent<Box>(out Box box))
         {
-            box.LeftJump();
+            box.RightJump();
         }
     }
 }
