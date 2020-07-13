@@ -134,17 +134,17 @@ Material:
     - _OutlineSize: 0
     - _OutlineThickness: 0.1
     - _Parallax: 0.02
-    - _RimIntensity: 0.524
+    - _RimIntensity: 0.387
     - _RimMax: 1
     - _RimMin: 0.409
-    - _RimSize: 0
-    - _RimSmoothness: 0.307
-    - _ShadowIntensity: 0.39
-    - _Shininess: 0.07
+    - _RimSize: 0.06
+    - _RimSmoothness: 1
+    - _ShadowIntensity: 0.99
+    - _Shininess: 0.01
     - _SmoothnessTextureChannel: 0
     - _SpecDiffusion: 0
     - _SpecularHighlights: 1
-    - _SpecularIntensity: 0.19
+    - _SpecularIntensity: 0
     - _SpecularPower: 0
     - _SpecularScale: 0.1
     - _SpecularSegment: 0.5

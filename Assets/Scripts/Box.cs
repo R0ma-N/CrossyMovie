@@ -9,6 +9,7 @@ public class Box : MonoBehaviour
 {
     public AnimationCurve SaltoUp, SaltoForward;
     public Animator CatAnimator;
+    private Transform _catTransform;
     Animator Animator;
     public RuntimeAnimatorController AutoPlay, UsualPlay;
     SkinnedMeshRenderer meshRenderer;
@@ -42,6 +43,8 @@ public class Box : MonoBehaviour
     public float LerpTimeSideJump;
     public Transform TargetForSideJump;
     private Quaternion startRotation;
+    private bool _catRightJump = false;
+    private bool _catLeftJump;
 
     [SerializeField] private bool _inSaltoSector;
     private bool _doSalto;
@@ -51,6 +54,7 @@ public class Box : MonoBehaviour
     void Start()
     {
         Animator = GetComponent<Animator>();
+        _catTransform = CatAnimator.gameObject.transform;
         meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         sound = GetComponent<AudioSource>();
         boom = GetComponentInChildren<ParticleSystem>();
@@ -70,6 +74,7 @@ public class Box : MonoBehaviour
 
     void Update()
     {
+        
         if (AutomaticPlay)
         {
             if (go)
@@ -203,7 +208,12 @@ public class Box : MonoBehaviour
                 transform.position = Vector3.Lerp(startPosition, TargetForSideJump.position, LerpRatio);
                 transform.rotation = Quaternion.Lerp(startRotation, TargetForSideJump.rotation, LerpRatio);
             }
+        }
 
+        if (_catRightJump)
+        {
+            print("right");
+            _catTransform.rotation = new Quaternion(0, 360, 0, 0);
         }
 
     }
@@ -232,14 +242,13 @@ public class Box : MonoBehaviour
 
     public void HideCat()
     {
-        print("hide cat");
-        CatAnimator.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
+
+        _catTransform.localScale = new Vector3(0, 0, 0);
     }
 
     public void UnHideCat()
     {
-        print("unhide cat");
-        CatAnimator.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;
+        _catTransform.localScale = new Vector3(1, 1, 1);
     }
 
     internal void Falling()
@@ -289,6 +298,7 @@ public class Box : MonoBehaviour
     public void Salto()
     {
         Animator.SetTrigger("JumpSaw");
+        CatAnimator.SetTrigger("JumpSaw");
         sound.clip = audioClips[2];
         sound.PlayDelayed(0.1f);
     }
@@ -296,15 +306,20 @@ public class Box : MonoBehaviour
     public void LeftJump()
     {
         Animator.SetTrigger("JumpToLeft");
-        sound.clip = audioClips[4];
-        sound.PlayDelayed(0.1f);
+        CatAnimator.SetTrigger("JumpToLeft");
+        //sound.clip = audioClips[4];
+        //sound.PlayDelayed(0.1f);
     }
 
-    internal void RightJump()
+    public void RightJump()
     {
         Animator.SetTrigger("JumpToRight");
-        sound.clip = audioClips[4];
-        sound.PlayDelayed(0.1f);
+        CatAnimator.SetTrigger("JumpToRight");
+        _catRightJump = true;
+
+        //_catRightJump = true;
+        //sound.clip = audioClips[4];
+        //sound.PlayDelayed(0.1f);
     }
 
     public void Shredder()
