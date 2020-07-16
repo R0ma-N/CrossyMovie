@@ -48,6 +48,15 @@ ModelImporter:
   - first:
       74: 3595542552851018171
     second: rig.001|Cat_Jump_to_Left
+  - first:
+      74: 6009444500630837065
+    second: Cat_Jump_R&L.001
+  - first:
+      74: 5994399194075886770
+    second: Cat_Go.001
+  - first:
+      74: -3066034254272241418
+    second: rig.001|Cat_Jump_R&L
   externalObjects: {}
   materials:
     materialImportMode: 1
