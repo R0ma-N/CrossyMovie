@@ -7,17 +7,21 @@ using UnityEngine.Rendering;
 
 public class Box : MonoBehaviour
 {
+    public Material BoxDissolve;
     public AnimationCurve SaltoUp, SaltoForward;
     public Animator CatAnimator;
     private Transform _catTransform;
     Animator Animator;
+    MeshRenderer[] meshRenderers;
     public RuntimeAnimatorController AutoPlay, UsualPlay;
-    SkinnedMeshRenderer meshRenderer;
+    SkinnedMeshRenderer[] meshRenderer;
     ParticleSystem boom;
     AudioSource sound;
     [SerializeField] AudioClip[] audioClips = null;
 
     public bool AutomaticPlay;
+    bool _roast;
+    public float _roastTime;
 
     //For moving
     public bool go;
@@ -55,7 +59,7 @@ public class Box : MonoBehaviour
     {
         Animator = GetComponent<Animator>();
         _catTransform = CatAnimator.gameObject.transform;
-        meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+        meshRenderer = GetComponentsInChildren<SkinnedMeshRenderer>();
         sound = GetComponent<AudioSource>();
         boom = GetComponentInChildren<ParticleSystem>();
         if(boom) boom.Stop();
@@ -216,6 +220,22 @@ public class Box : MonoBehaviour
             _catTransform.rotation = new Quaternion(0, 360, 0, 0);
         }
 
+        if (_roast)
+        {
+            _timer += Time.deltaTime;
+
+            if (_timer > _roastTime)
+            {
+                _timer = _roastTime;
+            }
+
+            float LerpRatio = _timer / _roastTime;
+
+            meshRenderer[1].material.SetFloat("Vector1_BurnTime", LerpRatio);
+            meshRenderer[0].material.SetFloat("Vector1_BurnTime", LerpRatio);
+            meshRenderer[2].material.color = Color.Lerp(Color.white, Color.black, LerpRatio);
+        }
+
     }
 
     public void OutConveyor()
@@ -325,14 +345,25 @@ public class Box : MonoBehaviour
     public void Shredder()
     {
         Animator.SetTrigger("Shredder");
-        sound.clip = audioClips[6];
-        sound.Play();
+        //sound.clip = audioClips[6];
+        //sound.Play();
         go = false;
     }
 
     public void Stop()
     {
         go = false;
+    }
+
+    public void Roast()
+    {
+        go = false;
+        _timer = 0;
+        Animator.SetTrigger("Roast");
+        CatAnimator.SetTrigger("Roast");
+        meshRenderer[0].material = meshRenderer[1].material = BoxDissolve;
+
+        _roast = true;
     }
 
     public void InSaltoSector(bool state)
@@ -347,14 +378,14 @@ public class Box : MonoBehaviour
 
     public void Portal(string state)
     {
-        if (state == "enter")
-        {
-            meshRenderer.shadowCastingMode = ShadowCastingMode.Off;
-        }
-        else if (state == "out")
-        {
-            meshRenderer.shadowCastingMode = ShadowCastingMode.On;
-        }
+        //if (state == "enter")
+        //{
+        //    meshRenderer.shadowCastingMode = ShadowCastingMode.Off;
+        //}
+        //else if (state == "out")
+        //{
+        //    meshRenderer.shadowCastingMode = ShadowCastingMode.On;
+        //}
     }
 
 }
