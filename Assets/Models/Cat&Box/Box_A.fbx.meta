@@ -102,6 +102,9 @@ ModelImporter:
   - first:
       74: -46140350951106486
     second: Box_ArmatureCups.001|Shredder
+  - first:
+      74: 5089274836950139702
+    second: Box_ArmatureCups.001|Box_Shredder
   externalObjects: {}
   materials:
     materialImportMode: 1

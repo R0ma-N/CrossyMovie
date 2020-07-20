@@ -262,7 +262,7 @@ public class Box : MonoBehaviour
 
     public void HideCat()
     {
-
+        print("HideCat");
         _catTransform.localScale = new Vector3(0, 0, 0);
     }
 
@@ -345,6 +345,7 @@ public class Box : MonoBehaviour
     public void Shredder()
     {
         Animator.SetTrigger("Shredder");
+        CatAnimator.SetTrigger("Shredder");
         //sound.clip = audioClips[6];
         //sound.Play();
         go = false;
